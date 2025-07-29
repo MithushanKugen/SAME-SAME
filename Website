@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAME SAME Thai but Different | Authentic Thai Cuisine</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://display.blogto.com/listings/20250523-same-same.jpeg?w=2048&cmd=resize_then_crop&height=1365&quality=70&format=jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .menu-item:hover .menu-overlay {
+            opacity: 1;
+        }
+        
+        .menu-overlay {
+            transition: opacity 0.3s ease;
+        }
+        
+        .floating-label {
+            position: absolute;
+            pointer-events: none;
+            left: 1rem;
+            top: 1rem;
+            transition: 0.2s ease all;
+        }
+        
+        input:focus ~ .floating-label,
+        input:not(:placeholder-shown) ~ .floating-label,
+        textarea:focus ~ .floating-label,
+        textarea:not(:placeholder-shown) ~ .floating-label {
+            top: -0.5rem;
+            left: 0.8rem;
+            font-size: 0.75rem;
+            opacity: 1;
+            background: white;
+            padding: 0 0.25rem;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #f59e0b;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-bold text-amber-600">
+                        <span class="text-gray-800">SAME SAME</span> <span class="text-amber-600">Thai but Different</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-gray-800 hover:text-amber-600">Home</a>
+                    <a href="#about" class="nav-link text-gray-800 hover:text-amber-600">About</a>
+                    <a href="#menu" class="nav-link text-gray-800 hover:text-amber-600">Menu</a>
+                    <a href="#gallery" class="nav-link text-gray-800 hover:text-amber-600">Gallery</a>
+                    <a href="#contact" class="nav-link text-gray-800 hover:text-amber-600">Contact</a>
+                    <a href="#reservations" class="px-4 py-2 bg-amber-600 text-white rounded-full hover:bg-amber-700 transition">Reservations</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-toggle" class="text-gray-800 hover:text-amber-600">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white pb-4 px-4 shadow-lg">
+            <a href="#home" class="block py-2 text-gray-800 hover:text-amber-600">Home</a>
+            <a href="#about" class="block py-2 text-gray-800 hover:text-amber-600">About</a>
+            <a href="#menu" class="block py-2 text-gray-800 hover:text-amber-600">Menu</a>
+            <a href="#gallery" class="block py-2 text-gray-800 hover:text-amber-600">Gallery</a>
+            <a href="#contact" class="block py-2 text-gray-800 hover:text-amber-600">Contact</a>
+            <a href="#reservations" class="block mt-2 px-4 py-2 bg-amber-600 text-white rounded-full text-center hover:bg-amber-700 transition">Reservations</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg pt-32 pb-20 md:pt-40 md:pb-32 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">SAME SAME <span class="text-amber-400">Thai but Different</span></h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Authentic Thai flavors with a contemporary twist</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#menu" class="px-8 py-3 bg-amber-600 text-white rounded-full hover:bg-amber-700 transition font-medium">View Menu</a>
+                <a href="#reservations" class="px-8 py-3 border-2 border-white text-white rounded-full hover:bg-white hover:text-gray-900 transition font-medium">Book a Table</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" 
+                         alt="Thai chef preparing food" 
+                         class="rounded-lg shadow-xl w-full h-auto">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Our Story</h2>
+                    <p class="text-gray-600 mb-4">
+                        At SAME SAME Thai but Different, we bring the vibrant flavors of Thailand to your table with a unique contemporary approach. 
+                        Founded in 2010 by Chef Nong, our restaurant has been serving authentic Thai cuisine with a modern twist.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        The name "SAME SAME" reflects our commitment to traditional Thai recipes, while "but Different" represents our innovative 
+                        approach to presentation and ingredient combinations. We source the freshest local ingredients and import authentic Thai 
+                        spices to create dishes that are both familiar and excitingly new.
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="flex items-center">
+                            <div class="bg-amber-100 p-3 rounded-full">
+                                <i class="fas fa-utensils text-amber-600"></i>
+                            </div>
+                            <div class="ml-3">
+                                <h3 class="font-semibold text-gray-800">Authentic Taste</h3>
+                                <p class="text-sm text-gray-600">Traditional recipes</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-amber-100 p-3 rounded-full">
+                                <i class="fas fa-leaf text-amber-600"></i>
+                            </div>
+                            <div class="ml-3">
+                                <h3 class="font-semibold text-gray-800">Fresh Ingredients</h3>
+                                <p class="text-sm text-gray-600">Locally sourced</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Menu</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Explore our selection of signature dishes that blend traditional Thai flavors with contemporary presentation</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Appetizers -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4 border-b-2 border-amber-100 pb-2">Appetizers</h3>
+                        <div class="space-y-6">
+                            <div class="menu-item relative">
+                                <div class="flex justify-between">
+                                    <h4 class="font-medium text-gray-800">Meiang Crab (1 pc) (GF/V)</h4>
+                                    <span class="text-amber-600 font-medium">$8</span>
+                                </div>
+                                <p class="text-sm text-gray-600 mt-1">Grilled chicken skewers with peanut sauce and cucumber relish</p>
+                            </div>
+                            <div class="menu-item relative">
+                                <div class="flex justify-between">
+                                    <h4 class="font-medium text-gray-800">Tod Mun Pla</h4>
+                                    <span class="text-amber-600 font-medium">$9.00</span>
+                                </div>
+                                <p class="text-sm text-gray-600 mt-1">Thai fish cakes with sweet chili sauce and cucumber salad</p>
+                            </div>
+                            <div class="menu-item relative">
+                                <div class="flex justify-between">
+                                    <h4 class="font-medium text-gray-800">Por Pia Tod</h4>
+                                    <span class="text-amber-600 font-medium">$7.50</span>
+                                </div>
+                                <p class="text-sm text-gray-600 mt-1">Crispy spring rolls with sweet chili dipping sauce</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Main Courses -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4 border-b-2 border-amber-100 pb-2">Main Courses</h3>
+                        <div class="space-y-6">
+                            <div class="menu-item relative">
+                                <div class="flex justify-between">
+                                    <h4 class="font-medium text-gray-800">Pad Thai</h4>
+                                    <span class="text-amber-600 font-medium">$14.50</span>
+                                </div>
+                                <p class="text-sm text-gray-600 mt-1">Stir-fried rice noodles with egg, tofu, bean sprouts, and peanuts</p>
+                            </div>
+                            <div class="menu-item relative">
+                                <div class="flex justify-between">
+                                    <h4 class="font-medium text-gray-800">Gaeng Keow Wan</h4>
+                                    <span class="text-amber-600 font-medium">$16.00</span>
+                                </div>
+                                <p class="text-sm text-gray-600 mt-1">Green curry with chicken, eggplant, and basil in coconut milk</p>
+                            </div>
+                            <div class="menu-item relative">
+                                <div class="flex justify-between">
+                                    <h4 class="font-medium text-gray-800">Pad Kra Pao</h4>
+                                    <span class="text-amber-600 font-medium">$15.50</span>
+                                </div>
+                                <p class="text-sm text-gray-600 mt-1">Stir-fried minced pork with holy basil, chili, and fried egg</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Desserts -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4 border-b-2 border-amber-100 pb-2">Desserts</h3>
+                        <div class="space-y-6">
+                            <div class="menu-item relative">
+                                <div class="flex justify-between">
+                                    <h4 class="font-medium text-gray-800">Mango Sticky Rice</h4>
+                                    <span class="text-amber-600 font-medium">$8.00</span>
+                                </div>
+                                <p class="text-sm text-gray-600 mt-1">Sweet coconut sticky rice with fresh mango</p>
+                            </div>
+                            <div class="menu-item relative">
+                                <div class="flex justify-between">
+                                    <h4 class="font-medium text-gray-800">Tub Tim Grob</h4>
+                                    <span class="text-amber-600 font-medium">$7.50</span>
+                                </div>
+                                <p class="text-sm text-gray-600 mt-1">Water chestnuts in coconut milk with crushed ice</p>
+                            </div>
+                            <div class="menu-item relative">
+                                <div class="flex justify-between">
+                                    <h4 class="font-medium text-gray-800">Kanom Tuay</h4>
+                                    <span class="text-amber-600 font-medium">$6.50</span>
+                                </div>
+                                <p class="text-sm text-gray-600 mt-1">Traditional Thai coconut custard</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+            
+                </a>
+            </div>
+        </div>
+    </section>
+                <!-- Desserts -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4 border-b-2 border-amber-100 pb-2">Desserts</h3>
+                        <div class="space-y-6">
+                            <div class="menu-item relative">
+                                <div class="flex justify-between">
+                                    <h4 class="font-medium text-gray-800">Mango Sticky Rice</h4>
+                                    <span class="text-amber-600 font-medium">$8.00</span>
+                                </div>
+                                <p class="text-sm text-gray-600 mt-1">Sweet coconut sticky rice with fresh mango</p>
+                            </div>
+                            <div class="menu-item relative">
+                                <div class="flex justify-between">
+                                    <h4 class="font-medium text-gray-800">Tub Tim Grob</h4>
+                                    <span class="text-amber-600 font-medium">$7.50</span>
+                                </div>
+                                <p class="text-sm text-gray-600 mt-1">Water chestnuts in coconut milk with crushed ice</p>
+                            </div>
+                            <div class="menu-item relative">
+                                <div class="flex justify-between">
+                                    <h4 class="font-medium text-gray-800">Kanom Tuay</h4>
+                                    <span class="text-amber-600 font-medium">$6.50</span>
+                                </div>
+                                <p class="text-sm text-gray-600 mt-1">Traditional Thai coconut custard</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+            
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Food Gallery</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">A visual journey through our culinary creations</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="relative group overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" 
+                         alt="Thai food" 
+                         class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <h3 class="text-white text-xl font-medium">Pad Thai</h3>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
+                         alt="Thai food" 
+                         class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <h3 class="text-white text-xl font-medium">Green Curry</h3>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Thai food" 
+                         class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <h3 class="text-white text-xl font-medium">Tom Yum Soup</h3>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1601315488950-3b5047998b38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80" 
+                         alt="Thai food" 
+                         class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <h3 class="text-white text-xl font-medium">Mango Sticky Rice</h3>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80" 
+                         alt="Thai food" 
+                         class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <h3 class="text-white text-xl font-medium">Thai Iced Tea</h3>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1601050690777-ff8ff7ddce8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Thai food" 
+                         class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <h3 class="text-white text-xl font-medium">Papaya Salad</h3>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-amber-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">What Our Customers Say</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Hear from our satisfied guests about their dining experience</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-amber-400 text-xl">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        "The Pad Thai at SAME SAME is unlike any I've had before. The perfect balance of sweet, sour, and savory with just the right amount of crunch from the peanuts. Truly exceptional!"
+                    </p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Customer" class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-4">
+                            <h4 class="font-medium text-gray-800">Sarah Johnson</h4>
+                            <p class="text-sm text-gray-600">Food Blogger</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-amber-400 text-xl">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        "I've been to Thailand multiple times, and the flavors here transport me right back. The green curry is perfectly spiced and the mango sticky rice is to die for. Highly recommend!"
+                    </p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Customer" class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-4">
+                            <h4 class="font-medium text-gray-800">Michael Chen</h4>
+                            <p class="text-sm text-gray-600">Regular Customer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-amber-400 text-xl">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        "The atmosphere is wonderful and the service is impeccable. We tried several dishes and each one was better than the last. Will definitely be coming back soon!"
+                    </p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Customer" class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-4">
+                            <h4 class="font-medium text-gray-800">Emily Rodriguez</h4>
+                            <p class="text-sm text-gray-600">First-time Visitor</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservations Section -->
+    <section id="reservations" class="py-20 bg-gray-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold mb-6">Make a Reservation</h2>
+                    <p class="text-gray-300 mb-8">
+                        Reserve your table online to experience authentic Thai cuisine with a contemporary twist. 
+                        For parties larger than 8 people, please call us directly.
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-amber-600 p-3 rounded-full">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="font-semibold">Phone Reservations</h3>
+                                <p class="text-gray-300">(416) 979-9799</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-amber-600 p-3 rounded-full">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="font-semibold">Opening Hours</h3>
+                                <p class="text-gray-300">Monday closed</p>
+                                 <p class="text-gray-300">Tuesday 5:00 PM - 10:00 PM</p>
+                                <p class="text-gray-300">Wednesday, Thursday & Sunday 11:30 AM - 10:00 PM</p>
+                                <p class="text-gray-300">Friday & Saturday - 11:00 PM</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-amber-600 p-3 rounded-full">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="font-semibold">Location</h3>
+                                <p class="text-gray-300">303 King St W, Toronto, ON</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <form class="bg-white rounded-lg shadow-lg p-8 text-gray-800">
+                        <h3 class="text-2xl font-bold mb-6 text-gray-800">Book Your Table</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="relative">
+                                <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500" placeholder=" ">
+                                <label for="name" class="floating-label text-gray-600">Full Name</label>
+                            </div>
+                            <div class="relative">
+                                <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500" placeholder=" ">
+                                <label for="email" class="floating-label text-gray-600">Email Address</label>
+                            </div>
+                            <div class="relative">
+                                <input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500" placeholder=" ">
+                                <label for="phone" class="floating-label text-gray-600">Phone Number</label>
+                            </div>
+                            <div class="relative">
+                                <select id="guests" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 appearance-none">
+                                    <option value="" disabled selected></option>
+                                    <option value="1">1 Person</option>
+                                    <option value="2">2 People</option>
+                                    <option value="3">3 People</option>
+                                    <option value="4">4 People</option>
+                                    <option value="5">5 People</option>
+                                    <option value="6">6 People</option>
+                                    <option value="7">7 People</option>
+                                    <option value="8">8 People</option>
+                                </select>
+                                <label for="guests" class="floating-label text-gray-600">Number of Guests</label>
+                                <i class="fas fa-chevron-down absolute right-4 top-4 text-gray-400"></i>
+                            </div>
+                            <div class="relative">
+                                <input type="date" id="date" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                                <label for="date" class="absolute left-4 top-3 text-gray-600 pointer-events-none"></label>
+                            </div>
+                            <div class="relative">
+                                <input type="time" id="time" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                                <label for="time" class="absolute left-4 top-3 text-gray-600 pointer-events-none"></label>
+                            </div>
+                        </div>
+                        <div class="mt-6 relative">
+                            <textarea id="message" rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500" placeholder=" "></textarea>
+                            <label for="message" class="floating-label text-gray-600">Special Requests</label>
+                        </div>
+                        <button type="submit" class="w-full mt-8 px-6 py-3 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition font-medium">
+                            Book Now
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Contact Us</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">We'd love to hear from you! Reach out with any questions or feedback</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <form class="space-y-6">
+                        <div class="relative">
+                            <input type="text" id="contact-name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500" placeholder=" ">
+                            <label for="contact-name" class="floating-label text-gray-600">Your Name</label>
+                        </div>
+                        <div class="relative">
+                            <input type="email" id="contact-email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500" placeholder=" ">
+                            <label for="contact-email" class="floating-label text-gray-600">Email Address</label>
+                        </div>
+                        <div class="relative">
+                            <input type="text" id="contact-subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500" placeholder=" ">
+                            <label for="contact-subject" class="floating-label text-gray-600">Subject</label>
+                        </div>
+                        <div class="relative">
+                            <textarea id="contact-message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500" placeholder=" "></textarea>
+                            <label for="contact-message" class="floating-label text-gray-600">Your Message</label>
+                        </div>
+                        <button type="submit" class="px-8 py-3 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition font-medium">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                
+                <div>
+                    <div class="h-full bg-gray-50 rounded-lg p-8">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-6">Get in Touch</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-amber-100 p-3 rounded-full">
+                                    <i class="fas fa-map-marker-alt text-amber-600"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-medium text-gray-800">Address</h4>
+                                    <p class="text-gray-600">123 303 King St W, Toronto, ON</p>
+                                  
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-amber-100 p-3 rounded-full">
+                                    <i class="fas fa-phone text-amber-600"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-medium text-gray-800">Phone</h4>
+                                    <p class="text-gray-600">(416) 979-9799</p>
+                                  
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-amber-100 p-3 rounded-full">
+                                    <i class="fas fa-envelope text-amber-600"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-medium text-gray-800">Email</h4>
+                                    <p class="text-gray-600">info@samesameyyz.com</p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-xl font-semibold text-gray-800 mt-10 mb-4">Follow Us</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-700 hover:bg-amber-600 hover:text-white transition">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-700 hover:bg-amber-600 hover:text-white transition">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-700 hover:bg-amber-600 hover:text-white transition">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-700 hover:bg-amber-600 hover:text-white transition">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <div class="h-96 w-full">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.715010955266!2d100.5017663153346!3d13.75629980138309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2990f1e3f7e0d%3A0x9f0a6e1f6e06f5b5!2s123%20Thai%20Street%2C%20Culinary%20District%2C%20Bangkok%2010110%2C%20Thailand!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+        </iframe>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">SAME SAME <span class="text-amber-400">Thai but Different</span></h3>
+                    <p class="text-gray-400">
+                        Authentic Thai flavors with a contemporary twist. Experience the taste of Thailand like never before.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-amber-400 transition">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-amber-400 transition">About Us</a></li>
+                        <li><a href="#menu" class="text-gray-400 hover:text-amber-400 transition">Menu</a></li>
+                        <li><a href="#gallery" class="text-gray-400 hover:text-amber-400 transition">Gallery</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-amber-400 transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Opening Hours</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex justify-between">
+                            <span>Monday - Friday</span>
+                            <span>11:00 AM - 10:00 PM</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Saturday</span>
+                            <span>10:00 AM - 11:00 PM</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Sunday</span>
+                            <span>10:00 AM - 11:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">
+                        Subscribe to our newsletter for updates and special offers.
+                    </p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-800 w-full">
+                        <button type="submit" class="bg-amber-600 px-4 py-2 rounded-r-lg hover:bg-amber-700 transition">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400">
+                    &copy; 2023 SAME SAME Thai but Different. All rights reserved.
+                </p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-amber-400 transition">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-amber-400 transition">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-amber-400 transition">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-amber-400 transition">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    mobileMenu.classList.add('hidden');
+                    
+                    // Scroll to target
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Form submission handlers (would be connected to backend in real implementation)
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your submission! This would connect to a backend in a production environment.');
+                this.reset();
+            });
+        });
+    </script>
+</body>
+</html>
